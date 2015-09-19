@@ -109,25 +109,18 @@ public class SettingsActivity extends PreferenceActivity {
 		// Add 'general' preferences.
 		addPreferencesFromResource(R.xml.pref_general);
 		
-//			Resources res=getResources();
-//			EditTextPreference myEditTextPreference=(EditTextPreference)findPreference(res.getString(R.string.pref_default_display_zipcode));
-//			EditText myEditText = (EditText)myEditTextPreference.getEditText();
-//			myEditText.setKeyListener(DigitsKeyListener.getInstance(false,false));
-//		 
+
 		// Add 'notifications' preferences, and a corresponding header.
 		PreferenceCategory fakeHeader = new PreferenceCategory(this);
-		//fakeHeader.setTitle(R.string.pref_header_notifications);
-		//getPreferenceScreen().addPreference(fakeHeader);
-		//addPreferencesFromResource(R.xml.pref_notification);
-		
+
 		 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);   
 		 s = preferences.getString("example_text", "pref_default_display_zipcode");
 
 		// Add 'data and sync' preferences, and a corresponding header.
 		fakeHeader = new PreferenceCategory(this);
-		//fakeHeader.setTitle(R.string.pref_header_data_sync);
+
 		getPreferenceScreen().addPreference(fakeHeader);
-		//addPreferencesFromResource(R.xml.pref_data_sync);
+
 
 		// Bind the summaries of EditText/List/Dialog/Ringtone preferences to
 		// their values. When their values change, their summaries are updated
@@ -135,15 +128,7 @@ public class SettingsActivity extends PreferenceActivity {
 		 
 		bindPreferenceSummaryToValue(findPreference("example_text"));
 		bindPreferenceSummaryToValue(findPreference("example_list"));
-//		Preference p = null;
-//		EditTextPreference editTextPref = (EditTextPreference)findPreference("example_text") ;
-//	    s = editTextPref.getText();
-		//s = getString(R.string.example_text, R.string.pref_default_display_zipcode);
-		//bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
-		//bindPreferenceSummaryToValue(findPreference("sync_frequency"));
-		
-//		SharedPreferences _sharedPreferences  = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-//		String name = _sharedPreferences.getString("example_text", "pref_default_display_zipcode");
+
 	}
 	
 
@@ -280,44 +265,4 @@ public class SettingsActivity extends PreferenceActivity {
 		}
 	}
 
-	/**
-	 * This fragment shows notification preferences only. It is used when the
-	 * activity is showing a two-pane settings UI.
-	 */
-	
-
-//	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-//	public static class NotificationPreferenceFragment extends
-//			PreferenceFragment {
-//		@Override
-//		public void onCreate(Bundle savedInstanceState) {
-//			super.onCreate(savedInstanceState);
-//			addPreferencesFromResource(R.xml.pref_notification);
-//
-//			// Bind the summaries of EditText/List/Dialog/Ringtone preferences
-//			// to their values. When their values change, their summaries are
-//			// updated to reflect the new value, per the Android Design
-//			// guidelines.
-//			bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
-//		}
-//	}
-
-//	/**
-//	 * This fragment shows data and sync preferences only. It is used when the
-//	 * activity is showing a two-pane settings UI.
-//	 */
-//	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-//	public static class DataSyncPreferenceFragment extends PreferenceFragment {
-//		@Override
-//		public void onCreate(Bundle savedInstanceState) {
-//			super.onCreate(savedInstanceState);
-//			addPreferencesFromResource(R.xml.pref_data_sync);
-//
-//			// Bind the summaries of EditText/List/Dialog/Ringtone preferences
-//			// to their values. When their values change, their summaries are
-//			// updated to reflect the new value, per the Android Design
-//			// guidelines.
-//			bindPreferenceSummaryToValue(findPreference("sync_frequency"));
-//		}
-//	}
 }
